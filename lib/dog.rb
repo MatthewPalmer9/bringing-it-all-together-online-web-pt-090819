@@ -82,7 +82,7 @@ class Dog
     SELECT id FROM dogs WHERE name = ? AND breed = ?
     SQL
 
-    dog = DB[:conn].execute(sql, name, breed)
+    dog = DB[:conn].execute(sql, name, breed)[0]
 
     if dog
       new_dog = self.new_from_db(dog)
